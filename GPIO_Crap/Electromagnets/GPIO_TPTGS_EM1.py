@@ -1,4 +1,4 @@
 import gpiozero
 import time
-LED = gpiozero.LED()
-pause = time.sleep()
+LED = gpiozero.LED
+pause = time.sleep
