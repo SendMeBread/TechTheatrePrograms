@@ -1,6 +1,8 @@
-import gpiozero
+import RPi.GPIO
 import time
-LED = gpiozero.LED
 pause = time.sleep
 
-red1 = gpiozero.LED(17)
+r= 17
+g = 18
+y = 22
+b = 23
