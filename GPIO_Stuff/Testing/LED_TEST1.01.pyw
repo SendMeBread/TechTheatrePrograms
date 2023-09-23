@@ -10,7 +10,6 @@ o = 26
 w = 12
 
 #I/O PINS
-GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(r, GPIO.OUT)
 GPIO.setmode(GPIO.BCM)
