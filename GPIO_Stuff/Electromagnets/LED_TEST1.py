@@ -9,8 +9,8 @@ r = 17
 g = 18
 y = 22
 b = 23
-o = 25
-w = 9
+o = 8
+w = 11
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
