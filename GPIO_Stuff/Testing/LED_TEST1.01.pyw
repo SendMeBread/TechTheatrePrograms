@@ -82,6 +82,6 @@ Checkbutton(win, text="ORANGE Off/On", variable=o_check, bg="orange", foreground
 w_check = IntVar()
 Checkbutton(win, text="WHITE Off/On", variable=w_check, bg="white", foreground="black").grid(row=6, sticky="nwes")
 
-Button(win, text="Commit" command=commit()).grid(row=7, sticky="nwes")
+Button(win, text="Commit", command=commit()).grid(row=7, sticky="nwes")
 
 win.mainloop()
