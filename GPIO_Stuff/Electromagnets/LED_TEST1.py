@@ -18,7 +18,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(y, GPIO.OUT)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(b, GPIO.OUT)
-
+GPIO.setwarnings(False)
 
 if rction=="off":
     if whichled=="r":
