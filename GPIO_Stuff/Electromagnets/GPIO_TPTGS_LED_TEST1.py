@@ -5,7 +5,7 @@ pause = time.sleep
 whichled = argv[1]
 rction=argv[2]
 
-r= 17
+r = 17
 g = 18
 y = 22
 b = 23
@@ -19,14 +19,15 @@ GPIO.setup(y, GPIO.OUT)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(b, GPIO.OUT)
 
+
 if rction=="off":
-    if whichled=="a":
+    if whichled=="r":
         GPIO.output(r, False)
-    if whichled=="b":
+    if whichled=="g":
         GPIO.output(g, False)
-    if whichled=="c":
+    if whichled=="y":
         GPIO.output(y, False)
-    if whichled=="d":
+    if whichled=="b":
         GPIO.output(b, False)
     if whichled=="all":
         GPIO.output(r, False)
@@ -34,13 +35,13 @@ if rction=="off":
         GPIO.output(y, False)
         GPIO.output(b, False)
 if rction=="on":
-    if whichled=="a":
+    if whichled=="r":
         GPIO.output(r, True)
-    if whichled=="b":
+    if whichled=="g":
         GPIO.output(g, True)
-    if whichled=="c":
+    if whichled=="y":
         GPIO.output(y, True)
-    if whichled=="d":
+    if whichled=="b":
         GPIO.output(b, True)
     if whichled=="all":
         GPIO.output(r, True)
