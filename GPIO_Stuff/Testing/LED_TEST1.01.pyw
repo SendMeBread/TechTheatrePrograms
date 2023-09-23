@@ -1,7 +1,6 @@
 import RPi.GPIO as GPIO
 from tkinter import *
 
-#LIGHTS
 r = 17
 g = 18
 y = 22
@@ -9,7 +8,6 @@ b = 23
 o = 26
 w = 12
 
-#I/O PINS
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(r, GPIO.OUT)
 GPIO.setmode(GPIO.BCM)
@@ -36,30 +34,30 @@ def commit():
     change_list = [r_check.get(), g_check.get(), y_check.get(), b_check.get(), o_check.get(), w_check.get()]
     for c in change_list:
         if c == 1:
-            if c is change_list[0]:
+            if c == change_list[0]:
                 GPIO.output(r, True)
-            elif c is change_list[1]:
+            elif c == change_list[1]:
                 GPIO.output(g, True)
-            elif c is change_list[2]:
+            elif c == change_list[2]:
                 GPIO.output(y, True)
-            elif c is change_list[3]:
+            elif c == change_list[3]:
                 GPIO.output(b, True)
-            elif c is change_list[4]:
+            elif c == change_list[4]:
                 GPIO.output(o, True)
-            elif c is change_list[5]:
+            elif c == change_list[5]:
                 GPIO.output(w, True)
         elif c == 0:
-            if c is change_list[0]:
+            if c == change_list[0]:
                 GPIO.output(r, False)
-            elif c is change_list[1]:
+            elif c == change_list[1]:
                 GPIO.output(g, False)
-            elif c is change_list[2]:
+            elif c == change_list[2]:
                 GPIO.output(y, False)
-            elif c is change_list[3]:
+            elif c == change_list[3]:
                 GPIO.output(b, False)
-            elif c is change_list[4]:
+            elif c == change_list[4]:
                 GPIO.output(o, False)
-            elif c is change_list[5]:
+            elif c == change_list[5]:
                 GPIO.output(w, False)
     
 
