@@ -1,13 +1,11 @@
 import RPi.GPIO as GPIO
-from pynput import mouse, keyboard
-Listener = mouse.Listener
 import time
 from sys import argv
 pause = time.sleep
 whichled = argv[1]
 rction=argv[2]
-def on_click(x, y, button, pressed):
-    pass
+        
+            
 #LIGHTS
 r = 17
 g = 18
@@ -16,6 +14,7 @@ b = 23
 o = 26
 w = 12
 
+#I/O PINS
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(r, GPIO.OUT)
