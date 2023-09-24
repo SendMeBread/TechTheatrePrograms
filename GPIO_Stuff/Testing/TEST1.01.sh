@@ -10,7 +10,7 @@ do
             sudo python3 LED_TEST1.pyw r on
             ;;
         R)
-            sudo python3 LED_TEST.pyw r off
+            sudo python3 LED_TEST1.pyw r off
             ;;
         g)
             sudo python3 LED_TEST1.pyw g on
