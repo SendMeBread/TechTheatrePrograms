@@ -5,5 +5,5 @@
 #E-Guitar = Red: p4, p6, p12;
 #Drum = Green: p3, p5, p11, p15
 #E-Bass = Yellow: p16;
-sudo -S <<< "password" sudo chmod 777 play_sarajevo.sh
+sudo -S <<< "11142006" sudo chmod 777 play_sarajevo.sh
 ./play_sarajevo.sh
