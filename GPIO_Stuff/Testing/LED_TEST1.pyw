@@ -1,7 +1,5 @@
 import RPi.GPIO as GPIO
-import time
 from sys import argv
-pause = time.sleep
 whichled = argv[1]
 rction=argv[2]
                 
