@@ -25,7 +25,7 @@ do
             sudo python3 LED_TEST1.pyw y off
             ;;
         b)
-            sudo python3 LED_TEST1.pyw y on
+            sudo python3 LED_TEST1.pyw b on
             ;;
         B)
             sudo python3 LED_TEST1.pyw b off
