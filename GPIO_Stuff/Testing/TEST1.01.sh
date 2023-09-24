@@ -9,40 +9,40 @@ do
     read -s -n 1 key
     case $key in
         r)
-            python3 LED_TEST1.pyw r on
+            sudo python3 LED_TEST1.pyw r on
             ;;
         R)
-            python3 LED_TEST.pyw r off
+            sudo python3 LED_TEST.pyw r off
             ;;
         g)
-            python3 LED_TEST1.pyw g on
+            sudo python3 LED_TEST1.pyw g on
             ;;
         G)
-            python3 LED_TEST1.pyw g off
+            sudo python3 LED_TEST1.pyw g off
             ;;
         y)
-            python3 LED_TEST1.pyw y on
+            sudo python3 LED_TEST1.pyw y on
             ;;
         Y)
-            python3 LED_TEST1.pyw y off
+            sudo python3 LED_TEST1.pyw y off
             ;;
         b)
-            python3 LED_TEST1.pyw y on
+            sudo python3 LED_TEST1.pyw y on
             ;;
         B)
-            python3 LED_TEST1.pyw b off
+            sudo python3 LED_TEST1.pyw b off
             ;;
         o)
-            python3 LED_TEST1.pyw o on
+            sudo python3 LED_TEST1.pyw o on
             ;;
         O)
-            python3 LED_TEST1.pyw o off
+            sudo python3 LED_TEST1.pyw o off
             ;;
         w)
-            python3 LED_TEST1.pyw w on
+            sudo python3 LED_TEST1.pyw w on
             ;;
         W)
-            python3 LED_TEST1.pyw w off
+            sudo python3 LED_TEST1.pyw w off
             ;;
     esac
 done
