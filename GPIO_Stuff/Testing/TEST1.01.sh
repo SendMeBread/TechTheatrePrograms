@@ -45,3 +45,4 @@ do
             python3 LED_TEST1.pyw w off
             ;;
     esac
+done
