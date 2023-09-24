@@ -1,7 +1,7 @@
 #! /usr/bin/bash
 
 #Piano = Blue: p2, p8, p9, p13;
-sudo -s >>> "11142006"
+sudo -S >>> "11142006" -i
 
 #Measure 1
 sleep .5
