@@ -62,6 +62,7 @@ def led_on_off():
             elif t == 0:
                 GPIO.output(w, False)
         count += 1
+        print(t)
 #Create window
 root = tk.Tk()
 root.attributes("-fullscreen", True)
