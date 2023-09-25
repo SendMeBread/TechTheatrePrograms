@@ -9,7 +9,6 @@ b = 23
 o = 26
 w = 12
 
-GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(r, GPIO.OUT)
 GPIO.setmode(GPIO.BCM)
@@ -31,7 +30,6 @@ def led_on_off():
     var_list.append(b_var.get())
     var_list.append(o_var.get())
     var_list.append(w_var.get())
-    GPIO.output(r, True)
     for t in var_list:
         if count == 1:
             if t == 1:
