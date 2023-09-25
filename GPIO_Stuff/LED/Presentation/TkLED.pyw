@@ -2,6 +2,14 @@ import RPi.GPIO as GPIO
 from sys import argv
 import tkinter as tk
 
+
+#Create window
+root = tk.Tk()
+root.attributes("-fullscreen", True)
+root['bg'] = "black"
+tk.Label(root, text="LED Fun!", fg='white', bg="black").grid(row=0)
+
+#Setup GPIOs
 r = 17
 g = 18
 y = 22
@@ -11,22 +19,11 @@ w = 12
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(r, GPIO.OUT)
-GPIO.setmode(GPIO.BCM)
 GPIO.setup(g, GPIO.OUT)
-GPIO.setmode(GPIO.BCM)
 GPIO.setup(y, GPIO.OUT)
-GPIO.setmode(GPIO.BCM)
 GPIO.setup(b, GPIO.OUT)
-GPIO.setmode(GPIO.BCM)
 GPIO.setup(o, GPIO.OUT)
-GPIO.setmode(GPIO.BCM)
 GPIO.setup(w, GPIO.OUT)
-
-#Create window
-root = tk.Tk()
-root.attributes("-fullscreen", True)
-root['bg'] = "black"
-tk.Label(root, text="LED Fun!", fg='white', bg="black").grid(row=0)
 
 #LED Function
 def led_on_off():
@@ -41,35 +38,36 @@ def led_on_off():
     for t in var_list:
         if count == 1:
             if t == 1:
-                GPIO.output(r, GPIO.HIGH)
+                GPIO.output(r, True)
             elif t == 0:
-                GPIO.output(r, GPIO.LOW)
+                GPIO.output(r, False)
         if count == 2:
             if t == 1:
-                GPIO.output(g, GPIO.HIGH)
+                GPIO.output(g, True)
             elif t == 0:
-                GPIO.output(g, GPIO.LOW)
+                GPIO.output(g, False)
         if count == 3:
             if t == 1:
-                GPIO.output(y, GPIO.HIGH)
+                GPIO.output(y, True)
             elif t == 0:
-                GPIO.output(y, GPIO.LOW)
+                GPIO.output(y, False)
         if count == 4:
             if t == 1:
-                GPIO.output(b, GPIO.HIGH)
+                GPIO.output(b, True)
             elif t == 0:
-                GPIO.output(b, GPIO.LOW)
+                GPIO.output(b, False)
         if count == 5:
             if t == 1:
-                GPIO.output(o, GPIO.HIGH)
+                GPIO.output(o, True)
             elif t == 0:
-                GPIO.output(o, GPIO.LOW)
+                GPIO.output(o, False)
         if count == 6:
             if t == 1:
-                GPIO.output(w, GPIO.HIGH)
+                GPIO.output(w, True)
             elif t == 0:
-                GPIO.output(w, GPIO.LOW)
+                GPIO.output(w, False)
         count += 1
+        GPIO.output(r, True)
 
 #Checkbutton Tracking Vars
 r_var = tk.IntVar()
