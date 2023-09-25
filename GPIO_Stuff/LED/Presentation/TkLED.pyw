@@ -26,7 +26,9 @@ GPIO.setup(w, GPIO.OUT)
 #Create window
 root = tk.Tk()
 root.attributes("-fullscreen", True)
+root['bg'] = "black"
 tk.Label(root, text="LED Fun!").grid(row=0)
+tk.Label.config(foreground="white")
 
 #Checkbutton Tracking Vars
 r_var = tk.IntVar()
@@ -37,6 +39,11 @@ o_var = tk.IntVar()
 w_var = tk.IntVar()
 
 r_b = tk.Checkbutton(foreground="black", background="red", text="RED", activebackground="black", activeforeground="red", variable="r_var").grid(row=1, sticky='we')
+g_b = tk.Checkbutton(foreground="black", background="green", text="GREEN", activebackground="black", activeforeground="green", variable="g_var").grid(row=2, sticky='we')
+y_b = tk.Checkbutton(foreground="black", background="yellow", text="YELLOW", activebackground="black", activeforeground="yellow", variable="y_var").grid(row=3, sticky='we')
+b_b = tk.Checkbutton(foreground="black", background="blue", text="BLUE", activebackground="black", activeforeground="blue", variable="b_var").grid(row=1, sticky='we')
+o_b = tk.Checkbutton(foreground="black", background="orange", text="ORANGE", activebackground="black", activeforeground="orange", variable="o_var").grid(row=1, sticky='we')
+w_b = tk.Checkbutton(foreground="black", background="white", text="WHITE", activebackground="black", activeforeground="white", variable="w_var").grid(row=1, sticky='we')
 root.columnconfigure(0, weight=1)
 
 tk.mainloop()
