@@ -21,6 +21,14 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(o, GPIO.OUT)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(w, GPIO.OUT)
+
+#Create window
+root = tk.Tk()
+root.attributes("-fullscreen", True)
+root['bg'] = "black"
+tk.Label(root, text="LED Fun!", fg='white', bg="black").grid(row=0)
+
+#LED Function
 def led_on_off():
     var_list = []
     count = 1
@@ -33,40 +41,35 @@ def led_on_off():
     for t in var_list:
         if count == 1:
             if t == 1:
-                GPIO.output(r, True)
+                GPIO.output(r, GPIO.HIGH)
             elif t == 0:
-                GPIO.output(r, False)
+                GPIO.output(r, GPIO.LOW)
         if count == 2:
             if t == 1:
-                GPIO.output(g, True)
+                GPIO.output(g, GPIO.HIGH)
             elif t == 0:
-                GPIO.output(g, False)
+                GPIO.output(g, GPIO.LOW)
         if count == 3:
             if t == 1:
-                GPIO.output(y, True)
+                GPIO.output(y, GPIO.HIGH)
             elif t == 0:
-                GPIO.output(y, False)
+                GPIO.output(y, GPIO.LOW)
         if count == 4:
             if t == 1:
-                GPIO.output(b, True)
+                GPIO.output(b, GPIO.HIGH)
             elif t == 0:
-                GPIO.output(b, False)
+                GPIO.output(b, GPIO.LOW)
         if count == 5:
             if t == 1:
-                GPIO.output(o, True)
+                GPIO.output(o, GPIO.HIGH)
             elif t == 0:
-                GPIO.output(o, False)
+                GPIO.output(o, GPIO.LOW)
         if count == 6:
             if t == 1:
-                GPIO.output(w, True)
+                GPIO.output(w, GPIO.HIGH)
             elif t == 0:
-                GPIO.output(w, False)
+                GPIO.output(w, GPIO.LOW)
         count += 1
-#Create window
-root = tk.Tk()
-root.attributes("-fullscreen", True)
-root['bg'] = "black"
-tk.Label(root, text="LED Fun!", fg='white', bg="black").grid(row=0)
 
 #Checkbutton Tracking Vars
 r_var = tk.IntVar()
