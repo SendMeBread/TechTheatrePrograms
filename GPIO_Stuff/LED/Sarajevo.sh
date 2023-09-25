@@ -1,7 +1,7 @@
 #! /usr/bin/bash
 sudo -s
 #SSH To Host
-source ./SSH_2_Mac.sh
+. ./Users/josephmb/TechTheatre/TechTheatrePrograms/GPIO_Stuff/LED/SSH_2_Mac.sh
 
 #Piano/Blue
-source ./Sarajevo_Pno.sh
+. /Users/josephmb/TechTheatre/TechTheatrePrograms/GPIO_Stuff/LED/Sarajevo_Pno.sh
