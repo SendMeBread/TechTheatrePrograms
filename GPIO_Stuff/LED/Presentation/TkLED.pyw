@@ -67,7 +67,6 @@ def led_on_off():
             elif t == 0:
                 GPIO.output(w, False)
         count += 1
-        GPIO.output(r, True)
         print(t)
 
 #Checkbutton Tracking Vars
