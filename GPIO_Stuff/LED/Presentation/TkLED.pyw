@@ -33,7 +33,7 @@ b_var = tk.IntVar()
 o_var = tk.IntVar()
 w_var = tk.IntVar()
 
-tk.Checkbutton(Fg="black", Bg="red", text="RED", activebackground="black", activeforeground="red", variable="r_var")
+tk.Checkbutton(foreground="black", background="red", text="RED", activebackground="black", activeforeground="red", variable="r_var")
 
 
 tk.mainloop()
