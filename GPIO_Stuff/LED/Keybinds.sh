@@ -1,6 +1,6 @@
 #! /usr/bin/bash
 
-echo "o/O, w/W, e/E, r/R, v/V, x/X, n/N, g/G, i/I, t/T, l/L, 2/@, 5/%, 4/&, f/F, s/S for ON/OFF for that light..."
+echo "o/O, w/W, e/E, r/R, v/V, x/X, n/N, g/G, i/I, t/T, l/L, 2/@, 5/%, 4/$, f/F, s/S for ON/OFF for that light..."
 
 while true
 do
@@ -82,7 +82,7 @@ do
             sudo python3 Max.pyw p13 on
             ;;
         %)
-            sudo python3 Max.pyw p13 of
+            sudo python3 Max.pyw p13 off
             ;;
         4)
             sudo python3 Max.pyw p14 on
