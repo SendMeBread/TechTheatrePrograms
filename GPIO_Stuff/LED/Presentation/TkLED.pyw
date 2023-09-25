@@ -67,6 +67,8 @@ def led_on_off():
             elif t == 0:
                 GPIO.output(w, False)
         count += 1
+        
+#Hotkey functions
 def r_on():
     GPIO.output(r, True)
 def r_off():
@@ -96,6 +98,20 @@ def w_on():
     GPIO.output(w, True)
 def w_off():
     GPIO.output(w, False)
+    
+#add hotkeys
+keyboard.add_hotkey('r', r_on)
+keyboard.add_hotkey('R', r_off)
+keyboard.add_hotkey('g', g_on)
+keyboard.add_hotkey('G', g_off)
+keyboard.add_hotkey('y', y_on)
+keyboard.add_hotkey('Y', y_off)
+keyboard.add_hotkey('b', b_on)
+keyboard.add_hotkey('B', b_on)
+keyboard.add_hotkey('o', o_on)
+keyboard.add_hotkey('O', o_off)
+keyboard.add_hotkey('w', w_on)
+keyboard.add_hotkey('W' w_off)
 
 #Checkbutton Tracking Vars
 r_var = tk.IntVar()
