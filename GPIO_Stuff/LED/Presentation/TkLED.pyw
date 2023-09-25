@@ -36,32 +36,32 @@ def led_on_off():
             if t == 1:
                 GPIO.output(r, True)
             elif t == 0:
-                GPIO.outpur(r, False)
+                GPIO.output(r, False)
         if count == 2:
             if t == 1:
                 GPIO.output(g, True)
             elif t == 0:
-                GPIO.outpur(g, False)
+                GPIO.output(g, False)
         if count == 3:
             if t == 1:
                 GPIO.output(y, True)
             elif t == 0:
-                GPIO.outpur(y, False)
+                GPIO.output(y, False)
         if count == 4:
             if t == 1:
                 GPIO.output(b, True)
             elif t == 0:
-                GPIO.outpur(b, False)
+                GPIO.output(b, False)
         if count == 5:
             if t == 1:
                 GPIO.output(o, True)
             elif t == 0:
-                GPIO.outpur(o, False)
+                GPIO.output(o, False)
         if count == 6:
             if t == 1:
                 GPIO.output(w, True)
             elif t == 0:
-                GPIO.outpur(w, False)
+                GPIO.output(w, False)
         count += 1
 #Create window
 root = tk.Tk()
