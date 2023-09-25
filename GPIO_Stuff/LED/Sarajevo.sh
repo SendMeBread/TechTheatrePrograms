@@ -1,5 +1,7 @@
 #! /usr/bin/bash
- sudo -i -S <<< "11142006"
+
+#SSH To Host
+./SSH_2_Mac.sh
 
 #Piano/Blue
  ./Sarajevo_Pno.sh
