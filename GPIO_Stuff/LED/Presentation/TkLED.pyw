@@ -27,8 +27,7 @@ GPIO.setup(w, GPIO.OUT)
 root = tk.Tk()
 root.attributes("-fullscreen", True)
 root['bg'] = "black"
-tk.Label(root, text="LED Fun!").grid(row=0)
-tk.Label.config(foreground="white")
+tk.Label(root, text="LED Fun!", fg='white').grid(row=0)
 
 #Checkbutton Tracking Vars
 r_var = tk.IntVar()
