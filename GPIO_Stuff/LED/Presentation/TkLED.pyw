@@ -25,7 +25,9 @@ GPIO.setup(w, GPIO.OUT)
 
 #Create window
 root = tk.Tk()
-tk.Label.grid(root, text="LED Fun!").grid(row=0)
+tk.Label(root, text="LED Fun!").grid(row=0)
+tk.label
+
 #Checkbutton Tracking Vars
 r_var = tk.IntVar()
 g_var = tk.IntVar()
