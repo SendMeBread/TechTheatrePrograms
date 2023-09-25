@@ -25,6 +25,7 @@ GPIO.setup(w, GPIO.OUT)
 
 #Create window
 root = tk.Tk()
+root.attributes("-fullscreen", True)
 tk.Label(root, text="LED Fun!").grid(row=0)
 
 #Checkbutton Tracking Vars
