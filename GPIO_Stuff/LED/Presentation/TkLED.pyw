@@ -1,8 +1,9 @@
 import RPi.GPIO as GPIO
 import tkinter as tk
-import keyboard
+from pynput import keyboard
 
-
+def for_canonical(c):
+    return lambda k: c(l.canonical(k))
 #Create window
 root = tk.Tk()
 root.attributes("-fullscreen", True)
@@ -84,10 +85,51 @@ def r_hotkey():
     elif r_state == True:
         r_state = False
         GPIO.output(r, r_state)
-    
+def g_hotkey():
+    global g_state
+    if g_state == False:
+        g_state = True
+        GPIO.output(g, g_state)
+    elif g_state == True:
+        g_state = False
+        GPIO.output(g, g_state)
+def y_hotkey():
+    global y_state
+    if y_state == False:
+        y_state = True
+        GPIO.output(y, y_state)
+    elif y_state == True:
+        y_state = False
+        GPIO.output(y, y_state)
+def b_hotkey():
+    global b_state
+    if b_state == False:
+        b_state = True
+        GPIO.output(b, b_state)
+    elif b_state == True:
+        b_state = False
+        GPIO.output(b, b_state)
+def o_hotkey():
+    global o_state
+    if o_state == False:
+        o_state = True
+        GPIO.output(o, o_state)
+    elif o_state == True:
+        o_state = False
+        GPIO.output(o, o_state)
+def w_hotkey():
+    global w_state
+    if w_state == False:
+        w_state = True
+        GPIO.output(w, w_state)
+    elif w_state == True:
+        w_state = False
+        GPIO.output(w, w_state)
 #add hotkeys
-keyboard.add_hotkey('r', r_hotkey)
+r_keystroke = keyboard.HotKey(keyboard.HotKey.parse('r'), r_hotkey)
 
+with keyboard.Listener(on_press=for_canonical(r_keystroke.press), on_release=for_canonical(r_keystroke.release)) as l:
+    l.join()
 #Checkbutton Tracking Vars
 r_var = tk.IntVar()
 g_var = tk.IntVar()
