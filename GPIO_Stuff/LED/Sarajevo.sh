@@ -1,4 +1,5 @@
 #! /usr/bin/bash
+sudo -s
 #SSH To Host
 bash ./SSH_2_Mac.sh
 
