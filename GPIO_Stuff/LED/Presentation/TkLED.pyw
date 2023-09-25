@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
-from sys import argv
 import tkinter as tk
+import keyboard
 
 
 #Create window
@@ -67,6 +67,35 @@ def led_on_off():
             elif t == 0:
                 GPIO.output(w, False)
         count += 1
+def r_on():
+    GPIO.output(r, True)
+def r_off():
+    GPIO.output(r, False)
+
+def g_on():
+    GPIO.output(g, True)
+def g_off():
+    GPIO.output(g, False)
+
+def y_on():
+    GPIO.output(y, True)
+def y_off():
+    GPIO.output(y, False)
+
+def b_on():
+    GPIO.output(b, True)
+def b_off():
+    GPIO.output(b, False)
+
+def o_on():
+    GPIO.output(o, True)
+def o_off():
+    GPIO.output(o, False)
+
+def w_on():
+    GPIO.output(w, True)
+def w_off():
+    GPIO.output(w, False)
 
 #Checkbutton Tracking Vars
 r_var = tk.IntVar()
@@ -76,13 +105,14 @@ b_var = tk.IntVar()
 o_var = tk.IntVar()
 w_var = tk.IntVar()
 #Checkbuttons
-r_b = tk.Checkbutton(foreground="black", background="#f00", text="RED", activebackground="black", activeforeground="#f00", variable=r_var).grid(row=1, sticky='we')
-g_b = tk.Checkbutton(foreground="black", background="#0f0", text="GREEN", activebackground="black", activeforeground="#0f0", variable=g_var).grid(row=2, sticky='we')
-y_b = tk.Checkbutton(foreground="black", background="#ff0", text="YELLOW", activebackground="black", activeforeground="#ff0", variable=y_var).grid(row=3, sticky='we')
-b_b = tk.Checkbutton(foreground="black", background="#0ff", text="BLUE", activebackground="black", activeforeground="#00f", variable=b_var).grid(row=4, sticky='we')
-o_b = tk.Checkbutton(foreground="black", background="#ffa500", text="ORANGE", activebackground="black", activeforeground="#ffa500", variable=o_var).grid(row=5, sticky='we')
-w_b = tk.Checkbutton(foreground="black", background="#fff", text="WHITE", activebackground="black", activeforeground="#fff", variable=w_var).grid(row=6, sticky='we')
-button = tk.Button(root, text="COMMIT", foreground="black", background="#fff", command=led_on_off).grid(row=7)
+tk.Text(foreground="#fff", background="#000", text="Keybinds ON/OFF: r/R, g/G, y/Y, b/B, o/O, w/W")
+r_b = tk.Checkbutton(foreground="black", background="#f00", text="RED", activebackground="black", activeforeground="#f00", variable=r_var).grid(row=2, sticky='we')
+g_b = tk.Checkbutton(foreground="black", background="#0f0", text="GREEN", activebackground="black", activeforeground="#0f0", variable=g_var).grid(row=3, sticky='we')
+y_b = tk.Checkbutton(foreground="black", background="#ff0", text="YELLOW", activebackground="black", activeforeground="#ff0", variable=y_var).grid(row=4, sticky='we')
+b_b = tk.Checkbutton(foreground="black", background="#0ff", text="BLUE", activebackground="black", activeforeground="#00f", variable=b_var).grid(row=5, sticky='we')
+o_b = tk.Checkbutton(foreground="black", background="#ffa500", text="ORANGE", activebackground="black", activeforeground="#ffa500", variable=o_var).grid(row=6, sticky='we')
+w_b = tk.Checkbutton(foreground="black", background="#fff", text="WHITE", activebackground="black", activeforeground="#fff", variable=w_var).grid(row=7, sticky='we')
+button = tk.Button(root, text="COMMIT", foreground="black", background="#fff", command=led_on_off).grid(row=8)
 root.columnconfigure(0, weight=1)
 root.rowconfigure(1, weight=1)
 root.rowconfigure(2, weight=1)
