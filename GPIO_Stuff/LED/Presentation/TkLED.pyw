@@ -62,7 +62,6 @@ def led_on_off():
             elif t == 0:
                 GPIO.output(w, False)
         count += 1
-        print(t)
 #Create window
 root = tk.Tk()
 root.attributes("-fullscreen", True)
@@ -82,7 +81,7 @@ y_b = tk.Checkbutton(foreground="black", background="#ff0", text="YELLOW", activ
 b_b = tk.Checkbutton(foreground="black", background="#0ff", text="BLUE", activebackground="black", activeforeground="#00f", variable="b_var").grid(row=4, sticky='we')
 o_b = tk.Checkbutton(foreground="black", background="#ffa500", text="ORANGE", activebackground="black", activeforeground="#ffa500", variable="o_var").grid(row=5, sticky='we')
 w_b = tk.Checkbutton(foreground="black", background="#fff", text="WHITE", activebackground="black", activeforeground="#fff", variable="w_var").grid(row=6, sticky='we')
-button = tk.Button(root, text="COMMIT", foreground="black", background="#fff", command=led_on_off()).grid(row=7)
+button = tk.Button(root, text="COMMIT", foreground="black", background="#fff", command=led_on_off).grid(row=7)
 root.columnconfigure(0, weight=1)
 root.rowconfigure(1, weight=1)
 root.rowconfigure(2, weight=1)
