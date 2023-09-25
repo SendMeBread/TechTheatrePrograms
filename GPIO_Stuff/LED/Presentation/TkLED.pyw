@@ -111,7 +111,7 @@ keyboard.add_hotkey('B', b_on)
 keyboard.add_hotkey('o', o_on)
 keyboard.add_hotkey('O', o_off)
 keyboard.add_hotkey('w', w_on)
-keyboard.add_hotkey('W' w_off)
+keyboard.add_hotkey('W', w_off)
 
 #Checkbutton Tracking Vars
 r_var = tk.IntVar()
