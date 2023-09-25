@@ -126,7 +126,7 @@ def w_hotkey():
         w_state = False
         GPIO.output(w, w_state)
 #add hotkeys
-r_keystroke = keyboard.HotKey(keyboard.HotKey.parse('r'), r_hotkey)
+r_keystroke = keyboard.HotKey(keyboard.HotKey.parse('<shift>+r'), r_hotkey)
 
 with keyboard.Listener(on_press=for_canonical(r_keystroke.press), on_release=for_canonical(r_keystroke.release)) as l:
     l.join()
