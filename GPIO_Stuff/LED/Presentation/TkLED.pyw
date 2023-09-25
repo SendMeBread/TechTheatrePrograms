@@ -68,6 +68,7 @@ def led_on_off():
                 GPIO.output(w, False)
         count += 1
         GPIO.output(r, True)
+        print(t)
 
 #Checkbutton Tracking Vars
 r_var = tk.IntVar()
