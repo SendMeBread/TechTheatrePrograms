@@ -95,7 +95,6 @@ b_var = tk.IntVar()
 o_var = tk.IntVar()
 w_var = tk.IntVar()
 #Checkbuttons
-tk.Text(foreground="#fff", background="#000", text="Keybinds ON/OFF: r/R, g/G, y/Y, b/B, o/O, w/W").grid(row=1)
 r_b = tk.Checkbutton(foreground="black", background="#f00", text="RED", activebackground="black", activeforeground="#f00", variable=r_var).grid(row=2, sticky='we')
 g_b = tk.Checkbutton(foreground="black", background="#0f0", text="GREEN", activebackground="black", activeforeground="#0f0", variable=g_var).grid(row=3, sticky='we')
 y_b = tk.Checkbutton(foreground="black", background="#ff0", text="YELLOW", activebackground="black", activeforeground="#ff0", variable=y_var).grid(row=4, sticky='we')
