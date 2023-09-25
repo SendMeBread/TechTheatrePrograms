@@ -37,7 +37,7 @@ o_var = tk.IntVar()
 w_var = tk.IntVar()
 
 r_b = tk.Checkbutton(foreground="black", background="red", text="RED", activebackground="black", activeforeground="red", variable="r_var")
-tk.Entry(r_b).grid(sticky='we')
+tk.Entry(r_b).grid(row=2, sticky='we')
 r_b.grid_columnconfigure(1, weight=1)
 
 
