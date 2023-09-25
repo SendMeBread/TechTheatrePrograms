@@ -85,7 +85,7 @@ def r_hotkey():
         GPIO.output(r, r_state)
     
 #add hotkeys
-keyboard.add_hotkey('r', r_hotkey)
+keyboard.add_hotkey('R', r_hotkey)
 
 #Checkbutton Tracking Vars
 r_var = tk.IntVar()
