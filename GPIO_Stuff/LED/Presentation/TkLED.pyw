@@ -69,49 +69,23 @@ def led_on_off():
         count += 1
         
 #Hotkey functions
-def r_on():
-    GPIO.output(r, True)
-def r_off():
-    GPIO.output(r, False)
+r_state = False
+g_state = False
+y_state = False
+b_state = False
+o_state = False
+w_state = False
 
-def g_on():
-    GPIO.output(g, True)
-def g_off():
-    GPIO.output(g, False)
-
-def y_on():
-    GPIO.output(y, True)
-def y_off():
-    GPIO.output(y, False)
-
-def b_on():
-    GPIO.output(b, True)
-def b_off():
-    GPIO.output(b, False)
-
-def o_on():
-    GPIO.output(o, True)
-def o_off():
-    GPIO.output(o, False)
-
-def w_on():
-    GPIO.output(w, True)
-def w_off():
-    GPIO.output(w, False)
+def r_hotkey():
+    if r_state == False:
+        r_state = True
+        GPIO.output(r, r_state)
+    elif r_state == True:
+        r_state = False
+        GPIO.output(r, r_state)
     
 #add hotkeys
-keyboard.add_hotkey('r', r_on)
-keyboard.add_hotkey('R', r_off)
-keyboard.add_hotkey('g', g_on)
-keyboard.add_hotkey('G', g_off)
-keyboard.add_hotkey('y', y_on)
-keyboard.add_hotkey('Y', y_off)
-keyboard.add_hotkey('b', b_on)
-keyboard.add_hotkey('B', b_on)
-keyboard.add_hotkey('o', o_on)
-keyboard.add_hotkey('O', o_off)
-keyboard.add_hotkey('w', w_on)
-keyboard.add_hotkey('W', w_off)
+keyboard.add_hotkey('r', r_hotkey)
 
 #Checkbutton Tracking Vars
 r_var = tk.IntVar()
