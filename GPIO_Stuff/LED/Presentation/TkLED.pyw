@@ -77,6 +77,7 @@ o_state = False
 w_state = False
 
 def r_hotkey():
+    global r_state
     if r_state == False:
         r_state = True
         GPIO.output(r, r_state)
