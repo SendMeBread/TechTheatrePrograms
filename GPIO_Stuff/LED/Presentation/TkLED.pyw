@@ -44,5 +44,6 @@ b_b = tk.Checkbutton(foreground="black", background="#0ff", text="BLUE", activeb
 o_b = tk.Checkbutton(foreground="black", background="#ffa500", text="ORANGE", activebackground="black", activeforeground="#ffa500", variable="o_var").grid(row=5, sticky='we')
 w_b = tk.Checkbutton(foreground="black", background="#fff", text="WHITE", activebackground="black", activeforeground="#fff", variable="w_var").grid(row=6, sticky='we')
 root.columnconfigure(0, weight=1)
+root.rowconfigure(0, weight=1)
 
 tk.mainloop()
