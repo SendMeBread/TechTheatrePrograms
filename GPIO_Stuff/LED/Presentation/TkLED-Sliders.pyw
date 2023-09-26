@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO
 import tkinter as tk
+import atexit
 
 #Create window
 root = tk.Tk()
@@ -52,13 +53,15 @@ def r_off():
 def r_trace(var, index, mode):
     print(str(r_var.get()))
     print(str(g_var.get()))
-    p = GPIO.PWM(r, 50)
-    p.start(0)
+    rp = GPIO.PWM(r, 50)
+    rp.start(0)
     try:
         while 1:
-            p.ChangeDutyCycle(g_var)
+            rp.ChangeDutyCycle(g_var)
     except KeyboardInterrupt:
         pass
+    return rp
+
 #GREEN Functions
 def g_add_1():
     global g_var
@@ -74,21 +77,42 @@ def g_off():
     g_var.set(0)
 def g_trace(var, index, mode):
     print(str(g_var.get()))
-    p = GPIO.PWM(r, 50)
-    p.start(0)
+    gp = GPIO.PWM(r, 50)
+    gp.start(0)
     try:
         while 1:
-            p.ChangeDutyCycle(g_var)
+            gp.ChangeDutyCycle(g_var)
     except KeyboardInterrupt:
         pass
+    return gp
+#BLUE Functions
+def b_trace(var, index, mode):
+    print(str(b_var.get()))
+    bp = GPIO.PWM(r, 50)
+    bp.start(0)
+    try:
+        while 1:
+            bp.ChangeDutyCycle(b_var)
+    except KeyboardInterrupt:
+        pass
+    return bp
+#WHITE Functions
+def w_trace(var, index, mode):
+    print(str(w_var.get()))
+    wp = GPIO.PWM(r, 50)
+    wp.start(0)
+    try:
+        while 1:
+            wp.ChangeDutyCycle(w_var)
+    except KeyboardInterrupt:
+        pass
+    return wp
 
 #Sliders
 r_scale = tk.Scale(root, fg="black", variable=r_var, from_= 0, to= 100, orient="horizontal", background="#f00", activebackground="#000").grid(row=1, column=4)
 g_scale = tk.Scale(root, fg="black", variable=g_var, from_= 0, to= 100, orient="horizontal", background="#0f0", activebackground="#000").grid(row=2, column=2)
-y_scale = tk.Scale(root, fg="black", variable=y_var, from_= 0, to= 100, orient="horizontal", background="#ff0", activebackground="#000").grid(row=3, column=2)
-b_scale = tk.Scale(root, fg="black", variable=b_var, from_= 0, to= 100, orient="horizontal", background="#00f", activebackground="#000").grid(row=4, column=2)
-o_scale = tk.Scale(root, fg="black", variable=o_var, from_= 0, to= 100, orient="horizontal", background="#ffa500", activebackground="#000").grid(row=5, column=2)
-w_scale = tk.Scale(root, fg="black", variable=w_var, from_= 0, to= 100, orient="horizontal", background="#fff", activebackground="#000").grid(row=6, column=2)
+b_scale = tk.Scale(root, fg="black", variable=b_var, from_= 0, to= 100, orient="horizontal", background="#00f", activebackground="#000").grid(row=3, column=2)
+w_scale = tk.Scale(root, fg="black", variable=w_var, from_= 0, to= 100, orient="horizontal", background="#fff", activebackground="#000").grid(row=4, column=2)
 
 #RED Buttons
 tk.Button(root, width=5, text="OFF", command=r_off, fg="#000", bg="#f00", borderwidth=0, activebackground="#000", activeforeground="#f00").grid(row=1, column=1)
@@ -114,3 +138,9 @@ r_var.trace_add("write", r_trace)
 g_var.trace_add("write", g_trace)
 
 tk.mainloop()
+def exit_cleanup(r, g, b, w):
+    r.cleanup()
+    g.cleanup()
+    b.cleanup()
+    w.cleanup()
+atexit.register(exit_cleanup(r_trace, g_trace, b_trace, w_trace))
