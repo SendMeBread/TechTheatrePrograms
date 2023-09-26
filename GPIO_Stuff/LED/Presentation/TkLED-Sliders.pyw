@@ -49,15 +49,16 @@ def r_max():
 def r_off():
     global r_var
     r_var.set(0)
+def r_trace(var, index, mode):
+    print(str(r_var.get()))
+    print(str(g_var.get()))
     p = GPIO.PWM(r, 50)
     p.start(0)
     try:
         while 1:
-            p.ChangeDutyCycle(r_var.get())
+            p.ChangeDutyCycle(g_var)
     except KeyboardInterrupt:
         pass
-def r_trace(var, index, mode):
-    print(str(r_var.get()))
 #GREEN Functions
 def g_add_1():
     global g_var
