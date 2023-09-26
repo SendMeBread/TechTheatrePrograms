@@ -25,28 +25,58 @@ GPIO.setup(w, GPIO.OUT)
 
 def red_pwm():
     val = r_var.get()
-    p = GPIO.PWM(r, val)
+    p = GPIO.PWM(r, 50)
     p.start(0.0)
+    try:
+        while 1:
+            p.ChangeDutyCycle(val)
+    except KeyboardInterrupt:
+        pass
 def green_pwm():
     val = g_var.get()
-    p = GPIO.PWM(g, val)
+    p = GPIO.PWM(g, 50)
     p.start(0.0)
+    try:
+        while 1:
+            p.ChangeDutyCycle(val)
+    except KeyboardInterrupt:
+        pass
 def yellow_pwm():
     val = y_var.get()
-    p = GPIO.PWM(y, val)
+    p = GPIO.PWM(y, 50)
     p.start(0.0)
+    try:
+        while 1:
+            p.ChangeDutyCycle(val)
+    except KeyboardInterrupt:
+        pass
 def blue_pwm():
     val = b_var.get()
-    p = GPIO.PWM(b, val)
+    p = GPIO.PWM(b, 50)
     p.start(0.0)
+    try:
+        while 1:
+            p.ChangeDutyCycle(val)
+    except KeyboardInterrupt:
+        pass
 def orange_pwm():
     val = o_var.get()
-    p = GPIO.PWM(o, val)
+    p = GPIO.PWM(o, 50)
     p.start(0.0)
+    try:
+        while 1:
+            p.ChangeDutyCycle(val)
+    except KeyboardInterrupt:
+        pass
 def white_pwm():
     val = w_var.get()
-    p = GPIO.PWM(w, val)
+    p = GPIO.PWM(w, 50)
     p.start(0.0)
+    try:
+        while 1:
+            p.ChangeDutyCycle(val)
+    except KeyboardInterrupt:
+        pass
     
         
 r_var = tk.DoubleVar()
@@ -55,9 +85,9 @@ y_var = tk.DoubleVar()
 b_var = tk.DoubleVar()
 o_var = tk.DoubleVar()
 w_var = tk.DoubleVar()
-r_scale = tk.Scale(root, variable=r_var, from_=0, to= 255, orient="vertical", background="#f00", activebackground="#000", command=red_pwm)
-g_scale = tk.Scale(root, variable=g_var, from_=0, to= 255, orient="vertical", background="#0f0", activebackground="#000")
-y_scale = tk.Scale(root, variable=y_var, from_=0, to= 255, orient="vertical", background="#ff0", activebackground="#000")
-b_scale = tk.Scale(root, variable=b_var, from_=0, to= 255, orient="vertical", background="#00f", activebackground="#000")
-o_scale = tk.Scale(root, variable=o_var, from_=0, to= 255, orient="vertical", background="#FFA500", activebackground="#000")
-w_scale = tk.Scale(root, variable=w_var, from_=0, to= 255, orient="vertical", background="#fff", activebackground="#000")
+r_scale = tk.Scale(root, variable=r_var, from_=0, to= 100, orient="vertical", background="#f00", activebackground="#000", command=red_pwm)
+g_scale = tk.Scale(root, variable=g_var, from_=0, to= 100, orient="vertical", background="#0f0", activebackground="#000")
+y_scale = tk.Scale(root, variable=y_var, from_=0, to= 100, orient="vertical", background="#ff0", activebackground="#000")
+b_scale = tk.Scale(root, variable=b_var, from_=0, to= 100, orient="vertical", background="#00f", activebackground="#000")
+o_scale = tk.Scale(root, variable=o_var, from_=0, to= 100, orient="vertical", background="#FFA500", activebackground="#000")
+w_scale = tk.Scale(root, variable=w_var, from_=0, to= 100, orient="vertical", background="#fff", activebackground="#000")
