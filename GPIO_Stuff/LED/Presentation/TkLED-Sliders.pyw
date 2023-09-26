@@ -78,16 +78,51 @@ def white_pwm():
     except KeyboardInterrupt:
         pass
     
-        
-r_var = tk.DoubleVar()
-g_var = tk.DoubleVar()
-y_var = tk.DoubleVar()
-b_var = tk.DoubleVar()
-o_var = tk.DoubleVar()
-w_var = tk.DoubleVar()
-r_scale = tk.Scale(root, variable=r_var, from_=0, to= 100, orient="vertical", background="#f00", activebackground="#000", command=red_pwm)
-g_scale = tk.Scale(root, variable=g_var, from_=0, to= 100, orient="vertical", background="#0f0", activebackground="#000", command=green_pwm)
-y_scale = tk.Scale(root, variable=y_var, from_=0, to= 100, orient="vertical", background="#ff0", activebackground="#000", command=yellow_pwm)
-b_scale = tk.Scale(root, variable=b_var, from_=0, to= 100, orient="vertical", background="#00f", activebackground="#000", command=blue_pwm)
-o_scale = tk.Scale(root, variable=o_var, from_=0, to= 100, orient="vertical", background="#FFA500", activebackground="#000", command=orange_pwm)
-w_scale = tk.Scale(root, variable=w_var, from_=0, to= 100, orient="vertical", background="#fff", activebackground="#000", command=white_pwm)
+
+r_var = tk.IntVar()
+g_var = tk.IntVar()
+y_var = tk.IntVar()
+b_var = tk.IntVar()
+o_var = tk.IntVar()
+w_var = tk.IntVar()
+def r_add():
+    global r_var
+    r_var.set(r_var.get() + 1)
+def r_sub():
+    global r_var
+    r_var.set(r_var.get() - 1)
+def r_max():
+    global r_var
+    r_var.set(100)
+def r_off():
+    global r_var
+    r_var.set(0)
+def r_trace(var, index, mode):
+    p = GPIO.PWM(r, 50)
+    p.start(0.0)
+    try:
+        while 1:
+            p.ChangeDutyCycle(r_var.get())
+    except KeyboardInterrupt:
+        pass
+    
+
+r_scale = tk.Scale(root, fg="black", variable=r_var, from_=0, to= 100, orient="horizontal", background="#f00", activebackground="#000").grid(row=1, column=2)
+g_scale = tk.Scale(root, fg="black", variable=g_var, from_=0, to= 100, orient="horizontal", background="#0f0", activebackground="#000").grid(row=2)
+y_scale = tk.Scale(root, fg="black", variable=y_var, from_=0, to= 100, orient="horizontal", background="#ff0", activebackground="#000").grid(row=3)
+b_scale = tk.Scale(root, fg="black", variable=b_var, from_=0, to= 100, orient="horizontal", background="#00f", activebackground="#000").grid(row=4)
+o_scale = tk.Scale(root, fg="black", variable=o_var, from_=0, to= 100, orient="horizontal", background="#ffa500", activebackground="#000").grid(row=5)
+w_scale = tk.Scale(root, fg="black", variable=w_var, from_=0, to= 100, orient="horizontal", background="#fff", activebackground="#000").grid(row=6)
+
+tk.Button(root, text="OFF", command=r_off, background="#fff", fg="#000", borderwidth=0 ).grid(row=1, column=0)
+tk.Button(root, text=u"\u2190", command=r_sub, background="#fff", fg="#000", border=0).grid(row=1, column=1)
+tk.Button(root, text=u"\u2192", command=r_add, background="#fff", fg="#000", border=0).grid(row=1, column=3)
+tk.Button(root, text="MAX", command=r_max, background="#fff", fg="#000", border=0).grid(row=1, column=4)
+
+root.columnconfigure(0, weight=1)
+root.columnconfigure(1, weight=0)
+root.columnconfigure(2, weight=0)
+root.columnconfigure(3, weight=0)
+root.columnconfigure(4, weight=1)
+
+tk.mainloop()
