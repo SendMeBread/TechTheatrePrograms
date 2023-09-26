@@ -29,47 +29,87 @@ y_var = tk.IntVar()
 b_var = tk.IntVar()
 o_var = tk.IntVar()
 w_var = tk.IntVar()
-def r_add():
+
+#RED Functions
+def r_add_1():
     global r_var
     r_var.set(r_var.get() + 1)
-def r_sub():
+def r_sub_1():
     global r_var
     r_var.set(r_var.get() - 1)
+def r_add_10():
+    global r_var
+    r_var.set(r_var.get() + 10)
+def r_sub_10():
+    global r_var
+    r_var.set(r_var.get() - 10)
 def r_max():
     global r_var
     r_var.set(100)
 def r_off():
     global r_var
     r_var.set(0)
-def r_trace(var, index, mode):
     p = GPIO.PWM(r, 50)
-    p.start(0.0)
+    p.start(0)
     try:
         while 1:
             p.ChangeDutyCycle(r_var.get())
     except KeyboardInterrupt:
         pass
-    
+def r_trace(var, index, mode):
+    print(str(r_var.get()))
+#GREEN Functions
+def g_add_1():
+    global g_var
+    g_var.set(g_var.get() + 1)
+def g_sub_1():
+    global g_var
+    g_var.set(g_var.get() - 1)
+def g_max():
+    global g_var
+    g_var.set(100)
+def g_off():
+    global g_var
+    g_var.set(0)
+def g_trace(var, index, mode):
+    print(str(g_var.get()))
+    p = GPIO.PWM(r, 50)
+    p.start(0)
+    try:
+        while 1:
+            p.ChangeDutyCycle(g_var)
+    except KeyboardInterrupt:
+        pass
 
-r_scale = tk.Scale(root, fg="black", variable=r_var, from_=0, to= 100, orient="horizontal", background="#f00", activebackground="#000").grid(row=1, column=2)
-g_scale = tk.Scale(root, fg="black", variable=g_var, from_=0, to= 100, orient="horizontal", background="#0f0", activebackground="#000").grid(row=2, column=2)
-y_scale = tk.Scale(root, fg="black", variable=y_var, from_=0, to= 100, orient="horizontal", background="#ff0", activebackground="#000").grid(row=3, column=2)
-b_scale = tk.Scale(root, fg="black", variable=b_var, from_=0, to= 100, orient="horizontal", background="#00f", activebackground="#000").grid(row=4, column=2)
-o_scale = tk.Scale(root, fg="black", variable=o_var, from_=0, to= 100, orient="horizontal", background="#ffa500", activebackground="#000").grid(row=5, column=2)
-w_scale = tk.Scale(root, fg="black", variable=w_var, from_=0, to= 100, orient="horizontal", background="#fff", activebackground="#000").grid(row=6, column=2)
+#Sliders
+r_scale = tk.Scale(root, fg="black", variable=r_var, from_= 0, to= 100, orient="horizontal", background="#f00", activebackground="#000").grid(row=1, column=4)
+g_scale = tk.Scale(root, fg="black", variable=g_var, from_= 0, to= 100, orient="horizontal", background="#0f0", activebackground="#000").grid(row=2, column=2)
+y_scale = tk.Scale(root, fg="black", variable=y_var, from_= 0, to= 100, orient="horizontal", background="#ff0", activebackground="#000").grid(row=3, column=2)
+b_scale = tk.Scale(root, fg="black", variable=b_var, from_= 0, to= 100, orient="horizontal", background="#00f", activebackground="#000").grid(row=4, column=2)
+o_scale = tk.Scale(root, fg="black", variable=o_var, from_= 0, to= 100, orient="horizontal", background="#ffa500", activebackground="#000").grid(row=5, column=2)
+w_scale = tk.Scale(root, fg="black", variable=w_var, from_= 0, to= 100, orient="horizontal", background="#fff", activebackground="#000").grid(row=6, column=2)
 
 #RED Buttons
-r_off_b = tk.Button(root, text="OFF", command=r_off, fg="#000", bg="#f00", activebackground="#000", activeforeground="#f00").grid(row=1, column=0)
-tk.Button(root, text=u"\u2190", command=r_sub, fg="#000", bg="#f00", activebackground="#000", activeforeground="#f00").grid(row=1, column=1)
-tk.Button(root, text=u"\u2192", command=r_add, fg="#000", bg="#f00", activebackground="#000", activeforeground="#f00").grid(row=1, column=3)
-tk.Button(root, text="MAX", command=r_max, fg="#000", bg="#f00", activebackground="#000", activeforeground="#f00").grid(row=1, column=4)
+tk.Button(root, width=5, text="OFF", command=r_off, fg="#000", bg="#f00", borderwidth=0, activebackground="#000", activeforeground="#f00").grid(row=1, column=1)
+tk.Button(root, width=5, text="+10", command=r_add_10, fg="#000", bg="#f00", borderwidth=0, activebackground="#000", activeforeground="#f00").grid(row=1, column=6)
+tk.Button(root, width=5, text="-1", command=r_sub_1, fg="#000", bg="#f00", borderwidth=0, activebackground="#000", activeforeground="#f00").grid(row=1, column=3)
+tk.Button(root, width=5, text="-10", command=r_sub_10, fg="#000", bg="#f00", borderwidth=0, activebackground="#000", activeforeground="#f00").grid(row=1, column=2)
+tk.Button(root, width=5, text="+1", command=r_add_1, fg="#000", bg="#f00", borderwidth=0, activebackground="#000", activeforeground="#f00").grid(row=1, column=5)
+tk.Button(root, width=5, text="MAX", command=r_max, fg="#000", bg="#f00", borderwidth=0, activebackground="#000", activeforeground="#f00").grid(row=1, column=7)
 #GREEN Buttons
-tk.Button(root, text="OFF")
+tk.Button(root, width=5, text="OFF", fg="#000", bg="#0f0", borderwidth=0, activebackground="#000", activeforeground="#0f0").grid(row=2, column=7)
 
-root.columnconfigure(0, weight=1)
+root.columnconfigure(0, weight=0)
 root.columnconfigure(1, weight=0)
 root.columnconfigure(2, weight=0)
 root.columnconfigure(3, weight=0)
-root.columnconfigure(4, weight=1)
+root.columnconfigure(4, weight=0)
+root.columnconfigure(5, weight=0)
+root.columnconfigure(6, weight=0)
+root.columnconfigure(7, weight=0)
+
+#Var Tracers
+r_var.trace_add("write", r_trace)
+g_var.trace_add("write", g_trace)
 
 tk.mainloop()
