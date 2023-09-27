@@ -74,7 +74,7 @@ def g_trace(var, index, mode):
     gp.start(0)
     try:
         while True:
-            gp.ChangeDutyCycle(g_var)
+            gp.ChangeDutyCycle(g_var.get())
     except KeyboardInterrupt:
         pass
     return gp
@@ -102,7 +102,7 @@ def b_trace(var, index, mode):
     bp.start(0)
     try:
         while True:
-            bp.ChangeDutyCycle(b_var)
+            bp.ChangeDutyCycle(b_var.get())
     except KeyboardInterrupt:
         pass
     return bp
@@ -130,7 +130,7 @@ def w_trace(var, index, mode):
     wp.start(0)
     try:
         while True:
-            wp.ChangeDutyCycle(w_var)
+            wp.ChangeDutyCycle(w_var.get())
     except KeyboardInterrupt:
         pass
     return wp
