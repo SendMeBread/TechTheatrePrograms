@@ -1,30 +1,28 @@
+#Import Modules
 import RPi.GPIO as GPIO
 import tkinter as tk
 import atexit
-
 #Create window
 root = tk.Tk()
 root.attributes("-fullscreen", True)
 root['bg'] = "black"
 tk.Label(root, text="LED Fun!", fg='white', bg="black").grid(row=0, column=3)
-
-#Setup GPIOs
+#Setup GPIO Vars
 r = 18
 g = 12
 b = 19
 w = 13
-
+#Setup GPIO Pins
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(r, GPIO.OUT)
 GPIO.setup(g, GPIO.OUT)
 GPIO.setup(b, GPIO.OUT)
 GPIO.setup(w, GPIO.OUT)
-
+#Create IntVars
 r_var = tk.IntVar()
 g_var = tk.IntVar()
 b_var = tk.IntVar()
 w_var = tk.IntVar()
-
 #RED Functions
 def r_add_1():
     global r_var
@@ -53,7 +51,6 @@ def r_trace(var, index, mode):
     except KeyboardInterrupt:
         pass
     return rp
-
 #GREEN Functions
 def g_add_1():
     global g_var
@@ -138,13 +135,11 @@ def w_trace(var, index, mode):
     except KeyboardInterrupt:
         pass
     return wp
-
 #Sliders
 r_scale = tk.Scale(root, fg="black", variable=r_var, from_= 0, to= 100, orient="horizontal", background="#f00", activebackground="#000").grid(row=1, column=4)
 g_scale = tk.Scale(root, fg="black", variable=g_var, from_= 0, to= 100, orient="horizontal", background="#0f0", activebackground="#000").grid(row=2, column=4)
 b_scale = tk.Scale(root, fg="black", variable=b_var, from_= 0, to= 100, orient="horizontal", background="#00f", activebackground="#000").grid(row=3, column=4)
 w_scale = tk.Scale(root, fg="black", variable=w_var, from_= 0, to= 100, orient="horizontal", background="#fff", activebackground="#000").grid(row=4, column=4)
-
 #RED Buttons
 tk.Button(root, width=5, text="OFF", command=r_off, fg="#000", bg="#f00", borderwidth=0, activebackground="#000", activeforeground="#f00").grid(row=1, column=1)
 tk.Button(root, width=5, text="+10", command=r_add_10, fg="#000", bg="#f00", borderwidth=0, activebackground="#000", activeforeground="#f00").grid(row=1, column=6)
@@ -173,7 +168,7 @@ tk.Button(root, width=5, text="-1", command=w_sub_1, fg="#000", bg="#fff", borde
 tk.Button(root, width=5, text="-10", command=w_sub_10, fg="#000", bg="#fff", borderwidth=0, activebackground="#000", activeforeground="#fff").grid(row=4, column=2)
 tk.Button(root, width=5, text="+1", command=w_add_1, fg="#000", bg="#fff", borderwidth=0, activebackground="#000", activeforeground="#fff").grid(row=4, column=5)
 tk.Button(root, width=5, text="MAX", command=w_off, fg="#000", bg="#fff", borderwidth=0, activebackground="#000", activeforeground="#fff").grid(row=4, column=7)
-
+#Column Spacing
 root.columnconfigure(0, weight=0)
 root.columnconfigure(1, weight=0)
 root.columnconfigure(2, weight=0)
@@ -182,14 +177,20 @@ root.columnconfigure(4, weight=0)
 root.columnconfigure(5, weight=0)
 root.columnconfigure(6, weight=0)
 root.columnconfigure(7, weight=0)
-
+#Row Spacing
+root.rowconfigure(0, weight=2)
+root.rowconfigure(1, weight=1)
+root.rowconfigure(2, weight=1)
+root.rowconfigure(3, weight=1)
+root.rowconfigure(4, weight=1)
 #Var Tracers
 r_var.trace_add("write", r_trace)
 g_var.trace_add("write", g_trace)
 b_var.trace_add("write", b_trace)
 w_var.trace_add("write", w_trace)
-
+#Initialize Tkinter
 tk.mainloop()
+#Cleanup GPIOs on exit
 def exit_cleanup(r, g, b, w):
     r.stop()
     g.stop()
