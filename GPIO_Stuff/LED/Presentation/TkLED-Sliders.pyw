@@ -14,7 +14,7 @@ g = 12
 b = 19
 w = 13
 
-GPIO.setmode(GPIO.BOARD)
+GPIO.setmode(GPIO.BCM)
 GPIO.setup(r, GPIO.OUT)
 GPIO.setup(g, GPIO.OUT)
 GPIO.setup(b, GPIO.OUT)
