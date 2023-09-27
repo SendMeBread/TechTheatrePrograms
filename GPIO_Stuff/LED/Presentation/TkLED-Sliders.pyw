@@ -9,12 +9,10 @@ root['bg'] = "black"
 tk.Label(root, text="LED Fun!", fg='white', bg="black").grid(row=0, column=3)
 
 #Setup GPIOs
-r = 17
-g = 18
-y = 22
-b = 23
-o = 26
-w = 12
+r = 18
+g = 12
+y = 13
+b = 19
 
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(r, GPIO.OUT)
@@ -40,7 +38,7 @@ def r_add_10():
     global r_var
     r_var.set(r_var.get() + 10)
 def r_sub_10():
-    global r_var
+    global r_varx``
     r_var.set(r_var.get() - 10)
 def r_max():
     global r_var
