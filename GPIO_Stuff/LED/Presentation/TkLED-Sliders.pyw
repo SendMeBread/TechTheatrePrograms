@@ -45,7 +45,6 @@ def r_off():
     global r_var
     r_var.set(0)
 def r_trace(var, index, mode):
-    print(str(r_var.get()))
     rp = GPIO.PWM(r, 50)
     rp.start(0)
     try:
@@ -75,8 +74,7 @@ def g_off():
     global g_var
     g_var.set(0)
 def g_trace(var, index, mode):
-    print(str(g_var.get()))
-    gp = GPIO.PWM(r, 50)
+    gp = GPIO.PWM(g, 50)
     gp.start(0)
     try:
         while 1:
@@ -104,7 +102,6 @@ def b_off():
     global b_var
     b_var.set(0)
 def b_trace(var, index, mode):
-    print(str(b_var.get()))
     bp = GPIO.PWM(b, 50)
     bp.start(0)
     try:
@@ -133,8 +130,7 @@ def w_off():
     global w_var
     w_var.set(0)
 def w_trace(var, index, mode):
-    print(str(w_var.get()))
-    wp = GPIO.PWM(r, 50)
+    wp = GPIO.PWM(w, 50)
     wp.start(0)
     try:
         while 1:
