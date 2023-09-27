@@ -1,7 +1,6 @@
 #Import Modules
 import RPi.GPIO as GPIO
 import tkinter as tk
-import atexit
 #Create window
 root = tk.Tk()
 root.attributes("-fullscreen", True)
@@ -191,10 +190,3 @@ w_var.trace_add("write", w_trace)
 #Initialize Tkinter
 tk.mainloop()
 #Cleanup GPIOs on exit
-def exit_cleanup(r, g, b, w):
-    r.stop()
-    g.stop()
-    b.stop()
-    w.stop()
-    GPIO.cleanup()
-atexit.register(exit_cleanup(r_trace, g_trace, b_trace, w_trace))
