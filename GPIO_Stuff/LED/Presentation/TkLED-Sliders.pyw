@@ -37,14 +37,7 @@ def r_off():
     global r_var
     r_var.set(0)
 def r_trace(var, index, mode):
-    rp = GPIO.PWM(r, 50)
-    rp.start(0)
-    try:
-        while True:
-            rp.ChangeDutyCycle(r_var.get())
-    except KeyboardInterrupt:
-        pass
-    return rp
+    p.set_PWM_dutycycle(r, r_var.get())
 #GREEN Functions
 def g_add_1():
     global g_var
@@ -65,14 +58,7 @@ def g_off():
     global g_var
     g_var.set(0)
 def g_trace(var, index, mode):
-    gp = GPIO.PWM(g, 50)
-    gp.start(0)
-    try:
-        while True:
-            gp.ChangeDutyCycle(g_var.get())
-    except KeyboardInterrupt:
-        pass
-    return gp
+    p.set_PWM_dutycycle(g, g_var.get())
 #BLUE Functions
 def b_add_1():
     global b_var
@@ -93,14 +79,7 @@ def b_off():
     global b_var
     b_var.set(0)
 def b_trace(var, index, mode):
-    bp = GPIO.PWM(b, 50)
-    bp.start(0)
-    try:
-        while True:
-            bp.ChangeDutyCycle(b_var.get())
-    except KeyboardInterrupt:
-        pass
-    return bp
+    p.set_PWM_dutycycle(g, g_var.get())
 #WHITE Functions
 def w_add_1():
     global w_var
@@ -121,14 +100,7 @@ def w_off():
     global w_var
     w_var.set(0)
 def w_trace(var, index, mode):
-    wp = GPIO.PWM(w, 50)
-    wp.start(0)
-    try:
-        while True:
-            wp.ChangeDutyCycle(w_var.get())
-    except KeyboardInterrupt:
-        pass
-    return wp
+    p.set_PWM_dutycycle(w, w_var.get())
 #Sliders
 r_scale = tk.Scale(root, fg="black", variable=r_var, from_= 0, to= 100, orient="horizontal", background="#f00", activebackground="#000").grid(row=1, column=4)
 g_scale = tk.Scale(root, fg="black", variable=g_var, from_= 0, to= 100, orient="horizontal", background="#0f0", activebackground="#000").grid(row=2, column=4)
