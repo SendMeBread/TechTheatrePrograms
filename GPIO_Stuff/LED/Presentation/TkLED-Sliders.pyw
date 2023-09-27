@@ -11,8 +11,8 @@ tk.Label(root, text="LED Fun!", fg='white', bg="black").grid(row=0, column=3)
 #Setup GPIOs
 r = 18
 g = 12
-y = 13
 b = 19
+w = 13
 
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(r, GPIO.OUT)
@@ -22,9 +22,7 @@ GPIO.setup(w, GPIO.OUT)
 
 r_var = tk.IntVar()
 g_var = tk.IntVar()
-y_var = tk.IntVar()
 b_var = tk.IntVar()
-o_var = tk.IntVar()
 w_var = tk.IntVar()
 
 #RED Functions
@@ -38,7 +36,7 @@ def r_add_10():
     global r_var
     r_var.set(r_var.get() + 10)
 def r_sub_10():
-    global r_varx``
+    global r_var
     r_var.set(r_var.get() - 10)
 def r_max():
     global r_var
