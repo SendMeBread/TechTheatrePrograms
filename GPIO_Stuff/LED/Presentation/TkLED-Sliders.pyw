@@ -16,12 +16,10 @@ b = 23
 o = 26
 w = 12
 
-GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BOARD)
 GPIO.setup(r, GPIO.OUT)
 GPIO.setup(g, GPIO.OUT)
-GPIO.setup(y, GPIO.OUT)
 GPIO.setup(b, GPIO.OUT)
-GPIO.setup(o, GPIO.OUT)
 GPIO.setup(w, GPIO.OUT)
 
 r_var = tk.IntVar()
@@ -139,8 +137,9 @@ g_var.trace_add("write", g_trace)
 
 tk.mainloop()
 def exit_cleanup(r, g, b, w):
-    r.cleanup()
-    g.cleanup()
-    b.cleanup()
-    w.cleanup()
+    r.stop()
+    g.stop()
+    b.stop()
+    w.stop()
+    GPIO.cleanup()
 atexit.register(exit_cleanup(r_trace, g_trace, b_trace, w_trace))
