@@ -163,7 +163,7 @@ tk.Button(root, width=5, text="+1", command=b_add_1, fg="#000", bg="#00f", borde
 tk.Button(root, width=5, text="MAX", command=b_off, fg="#000", bg="#00f", borderwidth=0, activebackground="#000", activeforeground="#00f").grid(row=3, column=7)
 #WHITE Buttons
 tk.Button(root, width=5, text="OFF", command=w_off, fg="#000", bg="#fff", borderwidth=0, activebackground="#000", activeforeground="#fff").grid(row=4, column=1)
-tk.Button(root, width=5, text="-10", command=w_add_10, fg="#000", bg="#fff", borderwidth=0, activebackground="#000", activeforeground="fff").grid(row=4, column=6)
+tk.Button(root, width=5, text="-10", command=w_add_10, fg="#000", bg="#fff", borderwidth=0, activebackground="#000", activeforeground="#fff").grid(row=4, column=6)
 tk.Button(root, width=5, text="-1", command=w_sub_1, fg="#000", bg="#fff", borderwidth=0, activebackground="#000", activeforeground="#fff").grid(row=4, column=3)
 tk.Button(root, width=5, text="-10", command=w_sub_10, fg="#000", bg="#fff", borderwidth=0, activebackground="#000", activeforeground="#fff").grid(row=4, column=2)
 tk.Button(root, width=5, text="+1", command=w_add_1, fg="#000", bg="#fff", borderwidth=0, activebackground="#000", activeforeground="#fff").grid(row=4, column=5)
