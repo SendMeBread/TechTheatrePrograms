@@ -1,5 +1,5 @@
 #Import Modules
-import RPi.GPIO as GPIO
+import pigpio
 import tkinter as tk
 #Create window
 root = tk.Tk()
@@ -11,12 +11,7 @@ r = 13
 g = 7
 b = 19
 w = 9
-#Setup GPIO Pins
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(r, GPIO.OUT)
-GPIO.setup(g, GPIO.OUT)
-GPIO.setup(b, GPIO.OUT)
-GPIO.setup(w, GPIO.OUT)
+p = pigpio.pi()
 #Create IntVars
 r_var = tk.IntVar()
 g_var = tk.IntVar()
