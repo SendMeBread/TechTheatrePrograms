@@ -45,7 +45,7 @@ def r_trace(var, index, mode):
     rp = GPIO.PWM(r, 50)
     rp.start(0)
     try:
-        while 1:
+        while True:
             rp.ChangeDutyCycle(r_var.get())
     except KeyboardInterrupt:
         pass
@@ -73,7 +73,7 @@ def g_trace(var, index, mode):
     gp = GPIO.PWM(g, 50)
     gp.start(0)
     try:
-        while 1:
+        while True:
             gp.ChangeDutyCycle(g_var)
     except KeyboardInterrupt:
         pass
@@ -101,7 +101,7 @@ def b_trace(var, index, mode):
     bp = GPIO.PWM(b, 50)
     bp.start(0)
     try:
-        while 1:
+        while True:
             bp.ChangeDutyCycle(b_var)
     except KeyboardInterrupt:
         pass
@@ -129,7 +129,7 @@ def w_trace(var, index, mode):
     wp = GPIO.PWM(w, 50)
     wp.start(0)
     try:
-        while 1:
+        while True:
             wp.ChangeDutyCycle(w_var)
     except KeyboardInterrupt:
         pass
