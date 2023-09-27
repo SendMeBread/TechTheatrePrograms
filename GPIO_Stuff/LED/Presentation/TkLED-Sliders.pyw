@@ -59,9 +59,15 @@ def r_trace(var, index, mode):
 def g_add_1():
     global g_var
     g_var.set(g_var.get() + 1)
+def g_add_10():
+    global g_var
+    g_var.set(g_var.get() + 10)
 def g_sub_1():
     global g_var
     g_var.set(g_var.get() - 1)
+def g_sub_10():
+    global g_var
+    g_var.set(g_var.get() - 10)
 def g_max():
     global g_var
     g_var.set(100)
@@ -79,9 +85,27 @@ def g_trace(var, index, mode):
         pass
     return gp
 #BLUE Functions
+def b_add_1():
+    global b_var
+    b_var.set(b_var.get() + 1)
+def b_add_10():
+    global b_var
+    b_var.set(b_var.get() + 10)
+def b_sub_1():
+    global b_var
+    g_var.set(b_var.get() - 1)
+def b_sub_10():
+    global b_var
+    b_var.set(b_var.get() - 10)
+def b_max():
+    global b_var
+    g_var.set(100)
+def b_off():
+    global b_var
+    b_var.set(0)
 def b_trace(var, index, mode):
     print(str(b_var.get()))
-    bp = GPIO.PWM(r, 50)
+    bp = GPIO.PWM(b, 50)
     bp.start(0)
     try:
         while 1:
@@ -90,6 +114,24 @@ def b_trace(var, index, mode):
         pass
     return bp
 #WHITE Functions
+def w_add_1():
+    global w_var
+    w_var.set(w_var.get() + 1)
+def w_add_10():
+    global w_var
+    w_var.set(w_var.get() + 10)
+def w_sub_1():
+    global w_var
+    w_var.set(w_var.get() - 1)
+def w_sub_10():
+    global w_var
+    w_var.set(w_var.get() - 10)
+def w_max():
+    global w_var
+    w_var.set(100)
+def w_off():
+    global w_var
+    w_var.set(0)
 def w_trace(var, index, mode):
     print(str(w_var.get()))
     wp = GPIO.PWM(r, 50)
@@ -115,7 +157,12 @@ tk.Button(root, width=5, text="-10", command=r_sub_10, fg="#000", bg="#f00", bor
 tk.Button(root, width=5, text="+1", command=r_add_1, fg="#000", bg="#f00", borderwidth=0, activebackground="#000", activeforeground="#f00").grid(row=1, column=5)
 tk.Button(root, width=5, text="MAX", command=r_max, fg="#000", bg="#f00", borderwidth=0, activebackground="#000", activeforeground="#f00").grid(row=1, column=7)
 #GREEN Buttons
-tk.Button(root, width=5, text="OFF", fg="#000", bg="#0f0", borderwidth=0, activebackground="#000", activeforeground="#0f0").grid(row=2, column=7)
+tk.Button(root, width=5, text="OFF", command=g_off, fg="#000", bg="#0f0", borderwidth=0, activebackground="#000", activeforeground="#0f0").grid(row=2, column=7)
+tk.Button(root, width=5, text="-10", command=g_add_10, fg="#000", bg="#0f0", borderwidth=0, activebackground="#000", activeforeground="#0f0").grid(row=2, column=7)
+tk.Button(root, width=5, text="-1", command=g_sub_1, fg="#000", bg="#0f0", borderwidth=0, activebackground="#000", activeforeground="#0f0").grid(row=2, column=7)
+tk.Button(root, width=5, text="-10", command=g_sub_10, fg="#000", bg="#0f0", borderwidth=0, activebackground="#000", activeforeground="#0f0").grid(row=2, column=7)
+tk.Button(root, width=5, text="+1", command=g_add_1, fg="#000", bg="#0f0", borderwidth=0, activebackground="#000", activeforeground="#0f0").grid(row=2, column=7)
+tk.Button(root, width=5, text="MAX", command=g_off, fg="#000", bg="#0f0", borderwidth=0, activebackground="#000", activeforeground="#0f0").grid(row=2, column=7)
 
 root.columnconfigure(0, weight=0)
 root.columnconfigure(1, weight=0)
