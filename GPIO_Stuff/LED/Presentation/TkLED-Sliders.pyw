@@ -7,7 +7,7 @@ root.attributes("-fullscreen", True)
 root['bg'] = "black"
 tk.Label(root, text="LED Fun!", fg='white', bg="black").grid(row=0, column=3)
 #Setup GPIO Vars
-r = 21
+r = 13
 g = 7
 b = 19
 w = 9
