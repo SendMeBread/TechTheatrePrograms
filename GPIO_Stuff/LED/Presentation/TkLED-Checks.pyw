@@ -27,12 +27,12 @@ GPIO.setup(w, GPIO.OUT)
 def led_on_off():
     var_list = []
     count = 1
-    var_list.append(r_var.get)
-    var_list.append(g_var.get)
-    var_list.append(y_var.get)
-    var_list.append(b_var.get)
-    var_list.append(o_var.get)
-    var_list.append(w_var.get)
+    var_list.append(r_var.get())
+    var_list.append(g_var.get())
+    var_list.append(y_var.get())
+    var_list.append(b_var.get())
+    var_list.append(o_var.get())
+    var_list.append(w_var.get())
     for t in var_list:
         if count == 1:
             if t == 1:
