@@ -145,9 +145,9 @@ def w_trace(var, index, mode):
 
 #Sliders
 r_scale = tk.Scale(root, fg="black", variable=r_var, from_= 0, to= 100, orient="horizontal", background="#f00", activebackground="#000").grid(row=1, column=4)
-g_scale = tk.Scale(root, fg="black", variable=g_var, from_= 0, to= 100, orient="horizontal", background="#0f0", activebackground="#000").grid(row=2, column=2)
-b_scale = tk.Scale(root, fg="black", variable=b_var, from_= 0, to= 100, orient="horizontal", background="#00f", activebackground="#000").grid(row=3, column=2)
-w_scale = tk.Scale(root, fg="black", variable=w_var, from_= 0, to= 100, orient="horizontal", background="#fff", activebackground="#000").grid(row=4, column=2)
+g_scale = tk.Scale(root, fg="black", variable=g_var, from_= 0, to= 100, orient="horizontal", background="#0f0", activebackground="#000").grid(row=2, column=4)
+b_scale = tk.Scale(root, fg="black", variable=b_var, from_= 0, to= 100, orient="horizontal", background="#00f", activebackground="#000").grid(row=3, column=4)
+w_scale = tk.Scale(root, fg="black", variable=w_var, from_= 0, to= 100, orient="horizontal", background="#fff", activebackground="#000").grid(row=4, column=4)
 
 #RED Buttons
 tk.Button(root, width=5, text="OFF", command=r_off, fg="#000", bg="#f00", borderwidth=0, activebackground="#000", activeforeground="#f00").grid(row=1, column=1)
@@ -157,12 +157,26 @@ tk.Button(root, width=5, text="-10", command=r_sub_10, fg="#000", bg="#f00", bor
 tk.Button(root, width=5, text="+1", command=r_add_1, fg="#000", bg="#f00", borderwidth=0, activebackground="#000", activeforeground="#f00").grid(row=1, column=5)
 tk.Button(root, width=5, text="MAX", command=r_max, fg="#000", bg="#f00", borderwidth=0, activebackground="#000", activeforeground="#f00").grid(row=1, column=7)
 #GREEN Buttons
-tk.Button(root, width=5, text="OFF", command=g_off, fg="#000", bg="#0f0", borderwidth=0, activebackground="#000", activeforeground="#0f0").grid(row=2, column=7)
-tk.Button(root, width=5, text="-10", command=g_add_10, fg="#000", bg="#0f0", borderwidth=0, activebackground="#000", activeforeground="#0f0").grid(row=2, column=7)
-tk.Button(root, width=5, text="-1", command=g_sub_1, fg="#000", bg="#0f0", borderwidth=0, activebackground="#000", activeforeground="#0f0").grid(row=2, column=7)
-tk.Button(root, width=5, text="-10", command=g_sub_10, fg="#000", bg="#0f0", borderwidth=0, activebackground="#000", activeforeground="#0f0").grid(row=2, column=7)
-tk.Button(root, width=5, text="+1", command=g_add_1, fg="#000", bg="#0f0", borderwidth=0, activebackground="#000", activeforeground="#0f0").grid(row=2, column=7)
+tk.Button(root, width=5, text="OFF", command=g_off, fg="#000", bg="#0f0", borderwidth=0, activebackground="#000", activeforeground="#0f0").grid(row=2, column=1)
+tk.Button(root, width=5, text="-10", command=g_add_10, fg="#000", bg="#0f0", borderwidth=0, activebackground="#000", activeforeground="#0f0").grid(row=2, column=6)
+tk.Button(root, width=5, text="-1", command=g_sub_1, fg="#000", bg="#0f0", borderwidth=0, activebackground="#000", activeforeground="#0f0").grid(row=2, column=3)
+tk.Button(root, width=5, text="-10", command=g_sub_10, fg="#000", bg="#0f0", borderwidth=0, activebackground="#000", activeforeground="#0f0").grid(row=2, column=2)
+tk.Button(root, width=5, text="+1", command=g_add_1, fg="#000", bg="#0f0", borderwidth=0, activebackground="#000", activeforeground="#0f0").grid(row=2, column=5)
 tk.Button(root, width=5, text="MAX", command=g_off, fg="#000", bg="#0f0", borderwidth=0, activebackground="#000", activeforeground="#0f0").grid(row=2, column=7)
+#BLUE Buttons
+tk.Button(root, width=5, text="OFF", command=b_off, fg="#000", bg="#00f", borderwidth=0, activebackground="#000", activeforeground="#00f").grid(row=3, column=1)
+tk.Button(root, width=5, text="-10", command=b_add_10, fg="#000", bg="#00f", borderwidth=0, activebackground="#000", activeforeground="#00f").grid(row=3, column=6)
+tk.Button(root, width=5, text="-1", command=b_sub_1, fg="#000", bg="#00f", borderwidth=0, activebackground="#000", activeforeground="#00f").grid(row=3, column=3)
+tk.Button(root, width=5, text="-10", command=b_sub_10, fg="#000", bg="#00f", borderwidth=0, activebackground="#000", activeforeground="#00f").grid(row=3, column=2)
+tk.Button(root, width=5, text="+1", command=b_add_1, fg="#000", bg="#00f", borderwidth=0, activebackground="#000", activeforeground="#00f").grid(row=3, column=5)
+tk.Button(root, width=5, text="MAX", command=b_off, fg="#000", bg="#00f", borderwidth=0, activebackground="#000", activeforeground="#00f").grid(row=3, column=7)
+#WHITE Buttons
+tk.Button(root, width=5, text="OFF", command=w_off, fg="#000", bg="#fff", borderwidth=0, activebackground="#000", activeforeground="#fff").grid(row=4, column=1)
+tk.Button(root, width=5, text="-10", command=w_add_10, fg="#000", bg="#fff", borderwidth=0, activebackground="#000", activeforeground="fff").grid(row=4, column=6)
+tk.Button(root, width=5, text="-1", command=w_sub_1, fg="#000", bg="#fff", borderwidth=0, activebackground="#000", activeforeground="#fff").grid(row=4, column=3)
+tk.Button(root, width=5, text="-10", command=w_sub_10, fg="#000", bg="#fff", borderwidth=0, activebackground="#000", activeforeground="#fff").grid(row=4, column=2)
+tk.Button(root, width=5, text="+1", command=w_add_1, fg="#000", bg="#fff", borderwidth=0, activebackground="#000", activeforeground="#fff").grid(row=4, column=5)
+tk.Button(root, width=5, text="MAX", command=w_off, fg="#000", bg="#fff", borderwidth=0, activebackground="#000", activeforeground="#fff").grid(row=4, column=7)
 
 root.columnconfigure(0, weight=0)
 root.columnconfigure(1, weight=0)
@@ -176,6 +190,8 @@ root.columnconfigure(7, weight=0)
 #Var Tracers
 r_var.trace_add("write", r_trace)
 g_var.trace_add("write", g_trace)
+b_var.trace_add("write", b_trace)
+w_var.trace_add("write", w_trace)
 
 tk.mainloop()
 def exit_cleanup(r, g, b, w):
