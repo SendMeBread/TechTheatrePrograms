@@ -50,12 +50,11 @@ def r_off():
     r_var.set(0)
 def r_trace(var, index, mode):
     print(str(r_var.get()))
-    print(str(g_var.get()))
     rp = GPIO.PWM(r, 50)
     rp.start(0)
     try:
         while 1:
-            rp.ChangeDutyCycle(g_var)
+            rp.ChangeDutyCycle(r_var.get())
     except KeyboardInterrupt:
         pass
     return rp
