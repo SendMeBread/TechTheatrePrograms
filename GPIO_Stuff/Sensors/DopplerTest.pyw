@@ -21,7 +21,6 @@ GPIO.setup(led, GPIO.OUT)
 GPIO.add_event_detect(sensor, GPIO.BOTH, callback = GPIO_callback)
 
 try:
-    while True:
-        pass
-except:
-    GPIO.cleanup()
+    pass
+except KeyboardInterrupt:
+    sensor.close()
