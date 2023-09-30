@@ -17,6 +17,7 @@ def GPIO_callback(sense):
         GPIO.output(led, False)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(sense, GPIO.IN)
+GPIO.setup(led, GPIO.OUT)
 while True:
     GPIO_callback(sense)
     if KeyboardInterrupt:
