@@ -19,6 +19,4 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(sensor, GPIO.IN)
 GPIO.setup(led, GPIO.OUT)
 while True:
-    if KeyboardInterrupt:
-        GPIO.cleanup()
     time.sleep(2)
