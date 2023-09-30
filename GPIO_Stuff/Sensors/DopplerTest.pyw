@@ -18,5 +18,6 @@ def GPIO_callback():
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(sensor, GPIO.IN)
 GPIO.setup(led, GPIO.OUT)
+GPIO.add_event_detect(sensor, GPIO.BOTH, callback=GPIO_callback)
 while True:
-    time.sleep(2)
+    print("Sleeping...")
