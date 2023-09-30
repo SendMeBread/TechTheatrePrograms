@@ -18,9 +18,11 @@ def GPIO_callback():
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(sensor, GPIO.IN)
 GPIO.setup(led, GPIO.OUT)
-GPIO.add_event_detect(sensor, GPIO.BOTH, callback = GPIO_callback)
-
-try:
-    pass
-except KeyboardInterrupt:
-    sensor.close()
+while True:
+    GPIO_callback
+    time.sleep(0.75)
+    try:
+        pass
+    except KeyboardInterrupt:
+        sensor.close()
+        led.close()
