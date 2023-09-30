@@ -1,17 +1,19 @@
 #Import libraries
 import RPi.GPIO as GPIO
+import time
 #Define pins
-led = 27 #Pin 14
 sense = 16 #Pin 36
 #5V Power - Pin 2
 #Sensor GND - Pin 14
-#LED GND - Pin 34
 #Define sensor function
 def GPIO_callback(sense):
     if GPIO.input(sense):
-        GPIO.output(led, True)
+        print("Input Detected")
     else:
-        GPIO.output(led, False) 
+        print("Waiting...")
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(sense, GPIO.IN)
-GPIO.setup(led, GPIO.OUT)
+while True:
+    GPIO_callback(sense)
+    time.sleep(2)
+    
