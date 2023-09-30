@@ -9,7 +9,7 @@ led = 23 #Pin 16
 #LED GND - Pin 34
 #Define sensor function
 def GPIO_callback():
-    if GPIO.input(sensor):
+    if GPIO.input(sensor, True):
         print("Close")
         GPIO.output(led, True)
     else:
