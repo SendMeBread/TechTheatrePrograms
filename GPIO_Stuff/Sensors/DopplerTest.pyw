@@ -16,7 +16,7 @@ def GPIO_callback():
         print("Far")
         GPIO.output(led, False)
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(sensor, GPIO.IN, initial=0)
+GPIO.setup(sensor, GPIO.IN)
 GPIO.setup(led, GPIO.OUT, initial=0)
 while True:
     GPIO_callback()
