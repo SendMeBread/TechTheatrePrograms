@@ -19,8 +19,8 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(sensor, GPIO.IN)
 GPIO.setup(led, GPIO.OUT)
 while True:
-    GPIO_callback
-    time.sleep(0.75)
+    GPIO_callback()
+    time.sleep(1)
     try:
         pass
     except KeyboardInterrupt:
